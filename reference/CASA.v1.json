@@ -33,110 +33,530 @@
         },
         "operationId": "get",
         "description": "Систем хэвийн байгаа эсэхийг шалгана."
-      },
-      "patch": {
-        "summary": "Update User Information",
-        "operationId": "patch-users-userId",
-        "responses": {
-          "200": {
-            "description": "User Updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                },
-                "examples": {
-                  "Updated User Rebecca Baker": {
-                    "value": {
-                      "id": 13,
-                      "firstName": "Rebecca",
-                      "lastName": "Baker",
-                      "email": "rebecca@gmail.com",
-                      "dateOfBirth": "1985-10-02",
-                      "emailVerified": false,
-                      "createDate": "2019-08-24"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "User Not Found"
-          },
-          "409": {
-            "description": "Email Already Taken"
-          }
-        },
-        "description": "Update the information of an existing user.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "firstName": {
-                    "type": "string"
-                  },
-                  "lastName": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string",
-                    "description": "If a new email is given, the user's email verified property will be set to false."
-                  },
-                  "dateOfBirth": {
-                    "type": "string"
-                  }
-                }
-              },
-              "examples": {
-                "Update First Name": {
-                  "value": {
-                    "firstName": "Rebecca"
-                  }
-                },
-                "Update Email": {
-                  "value": {
-                    "email": "rebecca@gmail.com"
-                  }
-                },
-                "Update Last Name & Date of Birth": {
-                  "value": {
-                    "lastName": "Baker",
-                    "dateOfBirth": "1985-10-02"
-                  }
-                }
-              }
-            }
-          },
-          "description": "Patch user properties to update."
-        }
       }
     },
     "/user": {
       "post": {
         "summary": "Create New User",
-        "operationId": "post-user",
+        "operationId": "13610000",
         "responses": {
           "200": {
-            "description": "User Created",
+            "description": "Дансны дэлгэрэнгүй",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "statusDate": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "flagNoDebit": {
+                      "type": "number"
+                    },
+                    "createdByName": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "capintBal": {
+                      "type": "number"
+                    },
+                    "totalAvailBal": {
+                      "type": "number"
+                    },
+                    "readName": {
+                      "type": "number"
+                    },
+                    "lastSeqTxn": {
+                      "type": "number"
+                    },
+                    "odintRcv": {
+                      "type": "number"
+                    },
+                    "odintRcvBill": {
+                      "type": "number"
+                    },
+                    "commLimit": {
+                      "type": "number"
+                    },
+                    "createdUserName": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "segName": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "corporateAcnt": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "prodName": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "penaltyRcv": {
+                      "type": "number"
+                    },
+                    "flagStoppedPayment": {
+                      "type": "number"
+                    },
+                    "companyCode": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "salaryAcnt": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "comintRcv": {
+                      "type": "number"
+                    },
+                    "unexintRcv": {
+                      "type": "number"
+                    },
+                    "readTran": {
+                      "type": "number"
+                    },
+                    "slevel": {
+                      "type": "number"
+                    },
+                    "flagFrozen": {
+                      "type": "number"
+                    },
+                    "comintRcvBill": {
+                      "type": "number"
+                    },
+                    "acntTypeName": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "custType": {
+                      "type": "number"
+                    },
+                    "modifiedDate": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "flagDormant": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "unex": {
+                      "type": "number"
+                    },
+                    "createdDatetime": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "odType": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "name2": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "odLimit": {
+                      "type": "number"
+                    },
+                    "doTran": {
+                      "type": "number"
+                    },
+                    "capMethodName": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "brchCode": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "currentBal": {
+                      "type": "number"
+                    },
+                    "availLimit": {
+                      "type": "number"
+                    },
+                    "modifiedDatetime": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "flagStopped": {
+                      "type": "number"
+                    },
+                    "odClassName2": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "lastCtDate": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "modifiedByName": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "od": {
+                      "type": "number"
+                    },
+                    "acrintBal": {
+                      "type": "number"
+                    },
+                    "acntType": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "modifiedBy": {
+                      "type": "number"
+                    },
+                    "curCode": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "statusSys": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "lastDtDate": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "brchName": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "acntCode": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "dailyBasisCode": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "isSecure": {
+                      "type": "number"
+                    },
+                    "monthlyWdCount": {
+                      "type": "number"
+                    },
+                    "custName": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "flagStoppedInt": {
+                      "type": "number"
+                    },
+                    "custCode": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "availBal": {
+                      "type": "number"
+                    },
+                    "prodCode": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "readBal": {
+                      "type": "number"
+                    },
+                    "segCode": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "jointOrSingle": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "createdDate": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "createdBy": {
+                      "type": "number"
+                    },
+                    "closedByName": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "statusSysName": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "unexintRcvBill": {
+                      "type": "number"
+                    },
+                    "passbookFacility": {
+                      "type": "number"
+                    },
+                    "blockedBal": {
+                      "type": "number"
+                    },
+                    "odClassName": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "openDate": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "paymtDefault": {
+                      "type": "number"
+                    },
+                    "capMethod": {
+                      "type": "number"
+                    },
+                    "odClassNo": {
+                      "type": "number"
+                    },
+                    "flagNoCredit": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "statusDate",
+                    "flagNoDebit",
+                    "createdByName",
+                    "capintBal",
+                    "totalAvailBal",
+                    "readName",
+                    "lastSeqTxn",
+                    "odintRcv",
+                    "odintRcvBill",
+                    "commLimit",
+                    "createdUserName",
+                    "segName",
+                    "corporateAcnt",
+                    "prodName",
+                    "penaltyRcv",
+                    "flagStoppedPayment",
+                    "companyCode",
+                    "salaryAcnt",
+                    "comintRcv",
+                    "unexintRcv",
+                    "readTran",
+                    "slevel",
+                    "flagFrozen",
+                    "comintRcvBill",
+                    "acntTypeName",
+                    "custType",
+                    "modifiedDate",
+                    "flagDormant",
+                    "name",
+                    "unex",
+                    "createdDatetime",
+                    "odType",
+                    "name2",
+                    "odLimit",
+                    "doTran",
+                    "capMethodName",
+                    "brchCode",
+                    "currentBal",
+                    "availLimit",
+                    "modifiedDatetime",
+                    "flagStopped",
+                    "odClassName2",
+                    "lastCtDate",
+                    "modifiedByName",
+                    "od",
+                    "acrintBal",
+                    "acntType",
+                    "modifiedBy",
+                    "curCode",
+                    "statusSys",
+                    "lastDtDate",
+                    "brchName",
+                    "acntCode",
+                    "dailyBasisCode",
+                    "isSecure",
+                    "monthlyWdCount",
+                    "custName",
+                    "flagStoppedInt",
+                    "custCode",
+                    "availBal",
+                    "prodCode",
+                    "readBal",
+                    "segCode",
+                    "jointOrSingle",
+                    "createdDate",
+                    "createdBy",
+                    "closedByName",
+                    "statusSysName",
+                    "unexintRcvBill",
+                    "passbookFacility",
+                    "blockedBal",
+                    "odClassName",
+                    "openDate",
+                    "paymtDefault",
+                    "capMethod",
+                    "odClassNo",
+                    "flagNoCredit"
+                  ],
+                  "x-examples": {
+                    "example-1": {
+                      "statusDate": "2018-03-16T00:00:00",
+                      "flagNoDebit": 0,
+                      "createdByName": " ",
+                      "capintBal": 502949353.38,
+                      "totalAvailBal": 467114758.98,
+                      "readName": 1,
+                      "lastSeqTxn": 74,
+                      "odintRcv": 0,
+                      "odintRcvBill": 0,
+                      "commLimit": 0,
+                      "createdUserName": " ",
+                      "segName": "ИРГЭН",
+                      "corporateAcnt": "N",
+                      "prodName": "ЗЭЭЛИЙН ТҮР ХАРИЛЦАХ БОЛОР",
+                      "penaltyRcv": 0,
+                      "flagStoppedPayment": 0,
+                      "companyCode": "11",
+                      "salaryAcnt": "0",
+                      "comintRcv": 0,
+                      "unexintRcv": 0,
+                      "readTran": 1,
+                      "slevel": 1,
+                      "flagFrozen": 0,
+                      "comintRcvBill": 0,
+                      "acntTypeName": "Харилцах",
+                      "custType": 0,
+                      "modifiedDate": "2020-08-25T00:00:00",
+                      "flagDormant": 0,
+                      "name": "АДЪЯАСҮРЭН БАТБАЯР",
+                      "unex": 0,
+                      "createdDatetime": "2018-06-18T15:11:23",
+                      "odType": "NON",
+                      "name2": "ADIYAASUREN",
+                      "odLimit": 0,
+                      "doTran": 1,
+                      "capMethodName": "Тухайн дансанд",
+                      "brchCode": "1100",
+                      "currentBal": 467114758.98,
+                      "availLimit": 0,
+                      "modifiedDatetime": "2021-01-18T14:10:43",
+                      "flagStopped": 0,
+                      "odClassName2": "NORMAL",
+                      "lastCtDate": "2020-08-11T00:00:00",
+                      "modifiedByName": "Tumee F",
+                      "od": 0,
+                      "acrintBal": 0,
+                      "acntType": "CA",
+                      "modifiedBy": 20,
+                      "curCode": "MNT",
+                      "statusSys": "O",
+                      "lastDtDate": "2021-01-23T00:00:00",
+                      "brchName": "ТӨВ САЛБАР",
+                      "acntCode": "110000000003",
+                      "dailyBasisCode": "ACTUAL/365 FIXED",
+                      "isSecure": 0,
+                      "monthlyWdCount": 0,
+                      "custName": "АДЪЯАСҮРЭН",
+                      "flagStoppedInt": 0,
+                      "custCode": "CIF-11000689",
+                      "availBal": 467114758.98,
+                      "prodCode": "2101001666",
+                      "readBal": 1,
+                      "segCode": "81",
+                      "jointOrSingle": "S",
+                      "createdDate": "2018-03-16T00:00:00",
+                      "createdBy": 84,
+                      "closedByName": " ",
+                      "statusSysName": "Нээлттэй",
+                      "unexintRcvBill": 0,
+                      "passbookFacility": 0,
+                      "blockedBal": 0,
+                      "odClassName": "ХЭВИЙН",
+                      "openDate": "2018-03-16T00:00:00",
+                      "paymtDefault": 0,
+                      "capMethod": 0,
+                      "odClassNo": 1,
+                      "flagNoCredit": 0
+                    }
+                  }
                 },
                 "examples": {
-                  "New User Bob Fellow": {
-                    "value": {
-                      "id": 12,
-                      "firstName": "Bob",
-                      "lastName": "Fellow",
-                      "email": "bob.fellow@gmail.com",
-                      "dateOfBirth": "1996-08-24",
-                      "emailVerified": false,
-                      "createDate": "2020-11-18"
-                    }
+                  "Дансны дэлгэрэнгүй": {
+                    "statusDate": "2018-03-16T00:00:00",
+                    "flagNoDebit": 0,
+                    "createdByName": " ",
+                    "capintBal": 502949353.38,
+                    "totalAvailBal": 467114758.98,
+                    "readName": 1,
+                    "lastSeqTxn": 74,
+                    "odintRcv": 0,
+                    "odintRcvBill": 0,
+                    "commLimit": 0,
+                    "createdUserName": " ",
+                    "segName": "ИРГЭН",
+                    "corporateAcnt": "N",
+                    "prodName": "ЗЭЭЛИЙН ТҮР ХАРИЛЦАХ БОЛОР",
+                    "penaltyRcv": 0,
+                    "flagStoppedPayment": 0,
+                    "companyCode": "11",
+                    "salaryAcnt": "0",
+                    "comintRcv": 0,
+                    "unexintRcv": 0,
+                    "readTran": 1,
+                    "slevel": 1,
+                    "flagFrozen": 0,
+                    "comintRcvBill": 0,
+                    "acntTypeName": "Харилцах",
+                    "custType": 0,
+                    "modifiedDate": "2020-08-25T00:00:00",
+                    "flagDormant": 0,
+                    "name": "АДЪЯАСҮРЭН БАТБАЯР",
+                    "unex": 0,
+                    "createdDatetime": "2018-06-18T15:11:23",
+                    "odType": "NON",
+                    "name2": "ADIYAASUREN",
+                    "odLimit": 0,
+                    "doTran": 1,
+                    "capMethodName": "Тухайн дансанд",
+                    "brchCode": "1100",
+                    "currentBal": 467114758.98,
+                    "availLimit": 0,
+                    "modifiedDatetime": "2021-01-18T14:10:43",
+                    "flagStopped": 0,
+                    "odClassName2": "NORMAL",
+                    "lastCtDate": "2020-08-11T00:00:00",
+                    "modifiedByName": "Tumee F",
+                    "od": 0,
+                    "acrintBal": 0,
+                    "acntType": "CA",
+                    "modifiedBy": 20,
+                    "curCode": "MNT",
+                    "statusSys": "O",
+                    "lastDtDate": "2021-01-23T00:00:00",
+                    "brchName": "ТӨВ САЛБАР",
+                    "acntCode": "110000000003",
+                    "dailyBasisCode": "ACTUAL/365 FIXED",
+                    "isSecure": 0,
+                    "monthlyWdCount": 0,
+                    "custName": "АДЪЯАСҮРЭН",
+                    "flagStoppedInt": 0,
+                    "custCode": "CIF-11000689",
+                    "availBal": 467114758.98,
+                    "prodCode": "2101001666",
+                    "readBal": 1,
+                    "segCode": "81",
+                    "jointOrSingle": "S",
+                    "createdDate": "2018-03-16T00:00:00",
+                    "createdBy": 84,
+                    "closedByName": " ",
+                    "statusSysName": "Нээлттэй",
+                    "unexintRcvBill": 0,
+                    "passbookFacility": 0,
+                    "blockedBal": 0,
+                    "odClassName": "ХЭВИЙН",
+                    "openDate": "2018-03-16T00:00:00",
+                    "paymtDefault": 0,
+                    "capMethod": 0,
+                    "odClassNo": 1,
+                    "flagNoCredit": 0
                   }
                 }
               }
@@ -177,20 +597,58 @@
                 ]
               },
               "examples": {
-                "Create User Bob Fellow": {
-                  "value": {
-                    "firstName": "Bob",
-                    "lastName": "Fellow",
-                    "email": "bob.fellow@gmail.com",
-                    "dateOfBirth": "1996-08-24"
-                  }
-                }
+                "Дансны мэдээлэл": [
+                  "110000000003",
+                  1
+                ]
               }
             }
           },
           "description": "Post the necessary fields for the API to create a new user."
         },
-        "description": "Create a new user."
+        "description": "Дансны мэдээлэл авах",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "cookie",
+            "name": "NESSESSION",
+            "description": "VVL6CUlVnf4nUXELs6SWMRsKBYSEYu"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "company",
+            "description": "11"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "op",
+            "description": "13610000"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "role",
+            "description": "45"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "description": "application/json; charset=UTF-8",
+            "name": "Content-Type"
+          }
+        ]
       }
     }
   },
