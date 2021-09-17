@@ -573,28 +573,21 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "firstName": {
-                    "type": "string"
-                  },
-                  "lastName": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "dateOfBirth": {
-                    "type": "string",
-                    "format": "date"
-                  }
+                "type": "array",
+                "description": "",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "object",
+                  "required": [],
+                  "properties": {}
                 },
-                "required": [
-                  "firstName",
-                  "lastName",
-                  "email",
-                  "dateOfBirth"
-                ]
+                "x-examples": {
+                  "example-1": [
+                    "110000000003",
+                    1
+                  ]
+                }
               },
               "examples": {
                 "Дансны мэдээлэл": [
@@ -610,31 +603,38 @@
         "parameters": [
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "VVL6CUlVnf4nUXELs6SWMRsKBYSEYu"
             },
             "in": "cookie",
             "name": "NESSESSION",
-            "description": "VVL6CUlVnf4nUXELs6SWMRsKBYSEYu"
+            "description": "VVL6CUlVnf4nUXELs6SWMRsKBYSEYu",
+            "required": true
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "11"
             },
             "in": "header",
             "name": "company",
-            "description": "11"
+            "description": "11",
+            "required": true
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "13610000"
             },
             "in": "header",
             "name": "op",
-            "description": "13610000"
+            "description": "13610000",
+            "required": true
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "45"
             },
             "in": "header",
             "name": "role",
@@ -642,11 +642,13 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "application/json; charset=UTF-8"
             },
             "in": "header",
             "description": "application/json; charset=UTF-8",
-            "name": "Content-Type"
+            "name": "Content-Type",
+            "required": true
           }
         ]
       }
