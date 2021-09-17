@@ -37,7 +37,7 @@
     },
     "/user": {
       "post": {
-        "summary": "Create New User",
+        "summary": "Дансны мэдээлэл авах",
         "operationId": "13610000",
         "responses": {
           "200": {
