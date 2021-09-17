@@ -6,24 +6,14 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000"
+      "url": "http://202.131.242.158:4102/nes.s.Web/NesFront"
     }
   ],
   "paths": {
-    "/users/{userId}": {
-      "parameters": [
-        {
-          "schema": {
-            "type": "integer"
-          },
-          "name": "userId",
-          "in": "path",
-          "required": true,
-          "description": "Id of an existing user."
-        }
-      ],
+    "": {
+      "parameters": [],
       "get": {
-        "summary": "Get User Info by User ID",
+        "summary": "ECHO",
         "tags": [],
         "responses": {
           "200": {
@@ -33,19 +23,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/User"
                 },
-                "examples": {
-                  "Get User Alice Smith": {
-                    "value": {
-                      "id": 142,
-                      "firstName": "Alice",
-                      "lastName": "Smith",
-                      "email": "alice.smith@gmail.com",
-                      "dateOfBirth": "1997-10-31",
-                      "emailVerified": true,
-                      "signUpDate": "2019-08-24"
-                    }
-                  }
-                }
+                "examples": {}
               }
             }
           },
@@ -53,8 +31,8 @@
             "description": "User Not Found"
           }
         },
-        "operationId": "get-users-userId",
-        "description": "Retrieve the information of the user with the matching user ID."
+        "operationId": "get",
+        "description": "Систем хэвийн байгаа эсэхийг шалгана."
       },
       "patch": {
         "summary": "Update User Information",
